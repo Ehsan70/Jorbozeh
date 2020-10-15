@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "6rVDuw+F1x6kt3cCq8+NEmLbdfPe05qMATj4nvL7S4nu1f0foOClYa00xAwFIKHDVr9gUG9ustpCAQtk8OgZhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aehsa\\source\\repos\\Jorbozeh\\Jorbozeh\\Jorbozeh.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aehsa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\aehsa\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\aehsa\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}
