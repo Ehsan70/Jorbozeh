@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jorbozeh.MainPage">
 
-    <StackLayout>
+    <StackLayout IsEnabled="False">
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
@@ -19,6 +19,27 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <Image Source="" />
+        <Label 
+            x:Name="cardTitle"
+            Text="Card Title" 
+            FontSize="Large"
+            Padding="30,0,30,0"
+            HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+        <Label 
+            x:Name="cardDesc"
+            Text="Card Desc" 
+            FontSize="Medium" 
+            Padding="30,0,30,0"
+            HorizontalTextAlignment="Center"/>
+        <Label 
+            x:Name="cardSubDesc"
+            Text="Card SubDesc"
+            FontSize="Caption"
+            Padding="30,0,30,0"
+            HorizontalTextAlignment="Center" FontAttributes="Italic"/>
+        
+        <Button Text="کارتِ بعدی" />
     </StackLayout>
 
 </ContentPage>
