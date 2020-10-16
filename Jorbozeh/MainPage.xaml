@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jorbozeh.MainPage">
 
-    <StackLayout IsEnabled="False">
+    <StackLayout>
+        <Button Text="Next Card" IsVisible="True" FontSize="Large" Clicked="Button_Clicked"/>
+
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
@@ -20,6 +22,7 @@
             </Label.FormattedText>
         </Label>
         <Image Source="" />
+
         <Label 
             x:Name="cardTitle"
             Text="Card Title" 
@@ -38,8 +41,6 @@
             FontSize="Caption"
             Padding="30,0,30,0"
             HorizontalTextAlignment="Center" FontAttributes="Italic"/>
-        <Button Text="Next Card" FontSize="Large" x:Name="nextCard_btn"
-                Clicked="nextCardClicked"/>
     </StackLayout>
 
 </ContentPage>
