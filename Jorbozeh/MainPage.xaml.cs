@@ -24,7 +24,9 @@ namespace Jorbozeh
         {
             cardDesc.Text = "changes Button_Clicked";
             //await firebaseHelper.AddCard(22, "11111");
-            List<Model.Card> res = await firebaseHelper.GetAllCards();
+            var zz = await firebaseHelper.GetFirstCard();
+
+/*            List<Model.Card> res = await firebaseHelper.GetAllCards();
             foreach(var c in res)
             {
                 if (c is null)
@@ -35,7 +37,7 @@ namespace Jorbozeh
                 {
                     Console.WriteLine(c.ToString());
                 }
-            }
+            }*/
         }
     }
 }
