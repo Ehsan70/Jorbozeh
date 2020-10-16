@@ -463,3 +463,8 @@ C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\stamp\_Conver
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\android\assets\Firebase.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\android\assets\LiteDB.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\android\assets\System.Reactive.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll

@@ -57,3 +57,7 @@ C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\obj\iPhone\Debug\XamlC.stamp
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\obj\iPhone\Debug\Jorbozeh.iOS.csproj.CopyComplete
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\obj\iPhone\Debug\Jorbozeh.iOS.exe
 C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\obj\iPhone\Debug\Jorbozeh.iOS.pdb
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\bin\iPhone\Debug\Firebase.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\bin\iPhone\Debug\LiteDB.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Users\aehsa\source\repos\Jorbozeh\Jorbozeh.iOS\bin\iPhone\Debug\System.Reactive.dll
