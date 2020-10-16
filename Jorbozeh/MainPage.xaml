@@ -34,12 +34,12 @@
             HorizontalTextAlignment="Center"/>
         <Label 
             x:Name="cardSubDesc"
-            Text="Card SubDesc"
+            Text="SubDesc"
             FontSize="Caption"
             Padding="30,0,30,0"
             HorizontalTextAlignment="Center" FontAttributes="Italic"/>
-        
-        <Button Text="کارتِ بعدی" />
+        <Button Text="Next Card" FontSize="Large" x:Name="nextCard_btn"
+                Clicked="nextCardClicked"/>
     </StackLayout>
 
 </ContentPage>
