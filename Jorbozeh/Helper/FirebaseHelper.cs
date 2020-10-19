@@ -19,16 +19,22 @@ namespace Jorbozeh.Helper
 
             await firebase
               .Child("Cards")
-              .PostAsync(new Card() {  CardDesc = desc, CardSubDesc= desc, CardTitle = desc });
+              .PostAsync(new Card(desc, desc, desc, desc));
         }
 
+        public async Task<Card> GetCard(string cardId)
+        {
+            Card c = await firebase.Child("Simple").Child(cardId).OnceSingleAsync<Card>();
+            Console.WriteLine($"c is : {c}");
+            return c;
+        }
         public async Task<Card> GetFirstCard()
         {
             try
             {
-                IReadOnlyCollection<FirebaseObject<Card>> res =  await firebase.Child("Simple").OrderByKey().LimitToFirst(1).OnceAsync<Card>();
+                IReadOnlyCollection<FirebaseObject<List<Card>>> res =  await firebase.Child("Simple").OnceAsync<List<Card>>();
             Console.WriteLine($"{res}");
-            return new Card();
+            return null;
             }
             catch (Exception e)
             {
@@ -38,40 +44,23 @@ namespace Jorbozeh.Helper
 
         }
 
-        public async Task<List<Card>> GetAllCards()
+        public async Task<List<Card>> GetAllCardssss()
         {
-            try
+            IReadOnlyCollection<FirebaseObject<Card>> cc = await firebase.Child("Simple").OnceAsync<Card>();
+            var lst = new List<Card>();
+            foreach (FirebaseObject<Card> c in cc)
             {
-                Console.WriteLine("starting to read cards");
+                var card = new Card(c.Object.CardTitle, c.Object.CardDesc, c.Object.CardSubDesc, c.Object.CardImage);
+                lst.Add(card);
+            }
+            return lst;
+        }
 
-                var cards = await firebase.Child("Simple").OnceAsync<List<Card>>();
-                //Console.WriteLine($"cards ==> {cards}");
-                Console.WriteLine("JOINED: "+string.Join("\n", cards.Select(d => d.ToString())));
-
-/*                foreach (var c in cards)
-                {
-                    Console.WriteLine($"c ==> {c}");
-                    Card cc = Newtonsoft.Json.JsonConvert.DeserializeObject<Card>(c.Object.ToString());
-                    Console.WriteLine($"c ==> {cc}");
-
-                }*/
-                return null;
-/*                return (await firebase
+            public async Task<List<Card>> GetAllCards()
+        {
+                return (await firebase
                   .Child("Simple")
-                  .OnceAsync<Card>()).Select(item => new Card
-                  {
-                      CardDesc = (string)item.Object.CardDesc,
-                      CardSubDesc = (string)item.Object.CardSubDesc,
-                      CardImage = (string)item.Object.CardImage,
-                      CardTitle = (string)item.Object.CardTitle
-                  }).ToList();*/
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-                return null;
-            }
-
+                  .OnceAsync<Card>()).Select(item => new Card (item.Object.CardTitle, item.Object.CardDesc, item.Object.CardSubDesc, item.Object.CardImage)).ToList();
         }
     }
 }

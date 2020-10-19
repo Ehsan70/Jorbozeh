@@ -11,6 +11,14 @@ namespace Jorbozeh.Model
         public string CardSubDesc { get; set; }
         public string CardImage { get; set; }
 
+        public Card(string cardTitle, string cardDesc, string cardSubDesc, string cardImage)
+        {
+            CardTitle = cardTitle;
+            CardDesc = cardDesc;
+            CardSubDesc = cardSubDesc;
+            CardImage = cardImage;
+        }
+
         public override string ToString()
         {
             return $"Id: {1}, Title: {CardTitle}, Desc: {CardDesc}, SubDesc: {CardSubDesc}";
