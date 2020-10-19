@@ -4,41 +4,57 @@
              x:Class="Jorbozeh.MainPage">
 
     <StackLayout>
-
-
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-            <!-- top controls -->
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="Start">
+            <Frame BackgroundColor="#C11912"
+                   Padding="24"
+                   CornerRadius="0">
+                <Label Text="جُربزه"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       FontSize="96" />
             </Frame>
         </StackLayout>
-        <StackLayout VerticalOptions="CenterAndExpand">
+
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="CenterAndExpand">
+
             <Image Source="" />
 
-            <Label 
-            x:Name="cardTitle"
-            Text="Card Title" 
-            FontSize="Large"
-            Padding="30,0,30,0"
-            HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-        <Label 
-            x:Name="cardDesc"
-            Text="Card Desc" 
-            FontSize="Medium" 
-            Padding="30,0,30,0"
-            HorizontalTextAlignment="Center"/>
-        <Label 
-            x:Name="cardSubDesc"
-            Text="SubDesc"
-            FontSize="Caption"
-            Padding="30,0,30,0"
-            HorizontalTextAlignment="Center" FontAttributes="Italic"/>
-    </StackLayout>
-
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-            <!-- bottom controls -->
-            <Button Text="کارتِ بعدی" IsVisible="True" FontSize="Large" Clicked="NextCard_btn_Clicked" VerticalOptions="Center"/>
+            <Label x:Name="cardTitle"
+                   Text="Card Title"
+                   FontSize="42"
+                   Padding="0,0,0,40"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold" />
+            <Label x:Name="cardDesc"
+                   Text="Card Desc"
+                   FontSize="32"
+                   Padding="0,0,0,25"
+                   HorizontalTextAlignment="Center" />
+            <Label x:Name="cardSubDesc"
+                   Text="SubDesc"
+                   FontSize="28"
+                   Padding="0,0,0,25"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Italic" />
         </StackLayout>
+
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="End"
+                     Margin="0,0,0,60">
+            <!-- bottom controls -->
+            <Button Text="کارتِ بعدی"
+                    IsVisible="True"
+                    FontSize="28"
+                    TextColor="White"
+                    BackgroundColor="#C11912"
+                    Clicked="NextCard_btn_Clicked"
+                    BorderRadius="25"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+        </StackLayout>
+
     </StackLayout>
 
 </ContentPage>
