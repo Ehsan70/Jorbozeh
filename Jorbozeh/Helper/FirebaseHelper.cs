@@ -44,7 +44,7 @@ namespace Jorbozeh.Helper
 
         }
 
-        public async Task<List<Card>> GetAllCardssss()
+        public async Task<List<Card>> GetAllCards()
         {
             IReadOnlyCollection<FirebaseObject<Card>> cc = await firebase.Child("Simple").OnceAsync<Card>();
             var lst = new List<Card>();
@@ -54,13 +54,6 @@ namespace Jorbozeh.Helper
                 lst.Add(card);
             }
             return lst;
-        }
-
-            public async Task<List<Card>> GetAllCards()
-        {
-                return (await firebase
-                  .Child("Simple")
-                  .OnceAsync<Card>()).Select(item => new Card (item.Object.CardTitle, item.Object.CardDesc, item.Object.CardSubDesc, item.Object.CardImage)).ToList();
         }
     }
 }
