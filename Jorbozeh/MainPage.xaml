@@ -5,24 +5,17 @@
 
     <StackLayout>
 
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Image Source="" />
 
-        <Label 
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+            <!-- top controls -->
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="" />
+
+            <Label 
             x:Name="cardTitle"
             Text="Card Title" 
             FontSize="Large"
@@ -40,8 +33,12 @@
             FontSize="Caption"
             Padding="30,0,30,0"
             HorizontalTextAlignment="Center" FontAttributes="Italic"/>
-        <Button Text="Next Card" IsVisible="True" FontSize="Large" Clicked="NextCard_btn_Clicked"/>
+    </StackLayout>
 
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <!-- bottom controls -->
+            <Button Text="کارتِ بعدی" IsVisible="True" FontSize="Large" Clicked="NextCard_btn_Clicked" VerticalOptions="Center"/>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
