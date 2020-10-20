@@ -1,53 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local ="clr-namespace:Jorbozeh"
-             x:Class="Jorbozeh.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Jorbozeh" x:Class="Jorbozeh.MainPage" BackgroundColor="{StaticResource BackgroundColor}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
 
-    <StackLayout>
-        <StackLayout Orientation="Vertical"
-                     VerticalOptions="Start"
-                     BackgroundColor="White">
-            <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" WidthRequest="200"/>
+
+        <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0"/>
+
+        <StackLayout Grid.Row="1">
+            <Label x:Name="cardTitle" Text="Card Title" Style="{StaticResource TitleLabel}" Padding="20,40,20,40" />
+            <Label x:Name="cardDesc" Text="Card Desc" Style="{StaticResource DescLabel}" Padding="20,0,20,25"/>
+            <Label x:Name="cardSubDesc" Text="SubDesc" Style="{StaticResource SubDescLabel}" Padding="20,0,20,25" HorizontalTextAlignment="Center" FontAttributes="Italic" />
         </StackLayout>
-        <StackLayout Orientation="Vertical"
-                     VerticalOptions="CenterAndExpand">
-
-
-            <Label x:Name="cardTitle"
-                   Text="Card Title"
-                   FontSize="42"
-                   Padding="0,0,0,40"
-                   HorizontalTextAlignment="Center"
-                   FontAttributes="Bold" />
-            <Label x:Name="cardDesc"
-                   Text="Card Desc"
-                   FontSize="32"
-                   Padding="0,0,0,25"
-                   HorizontalTextAlignment="Center" />
-            <Label x:Name="cardSubDesc"
-                   Text="SubDesc"
-                   FontSize="28"
-                   Padding="0,0,0,25"
-                   HorizontalTextAlignment="Center"
-                   FontAttributes="Italic" />
-        </StackLayout>
-
-        <StackLayout Orientation="Vertical"
-                     VerticalOptions="End"
-                     Margin="0,0,0,60">
-            <!-- bottom controls -->
-            <Button Text="کارتِ بعدی"
-                    IsVisible="True"
-                    FontSize="28"
-                    TextColor="White"
-                    BackgroundColor="#C11912"
-                    Clicked="NextCard_btn_Clicked"
-                    BorderRadius="25"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"/>
-        </StackLayout>
-
-    </StackLayout>
+        
+        <Button Text="کارتِ بعدی" IsVisible="True" Grid.Row="2" Style="{StaticResource NextCardBtn}"  Clicked="NextCard_btn_Clicked" />
+        
+    </Grid>
 
 </ContentPage>
