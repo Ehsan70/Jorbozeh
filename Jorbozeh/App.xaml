@@ -1,8 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jorbozeh.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Jorbozeh.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!--Colors-->
+            <Color x:Key="BackgroundColor">White</Color>
+            
+            
+            <!--Font Families-->
+            <OnPlatform x:Key="CardTitleFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue</On>
+                <On Platform="Android">sans-serif-light</On>
+            </OnPlatform>
 
+            <OnPlatform x:Key="CardDescFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue</On>
+                <On Platform="Android">sans-serif</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="CardSubDescFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue-Light</On>
+                <On Platform="Android">sans-serif-light</On>
+            </OnPlatform>
+
+            <!--Font Sizes-->
+            <x:Double x:Key="CardTitleFontSize">42</x:Double>
+            <x:Double x:Key="CardDescFontSize">32</x:Double>
+            <x:Double x:Key="CardSubDescFontSize">28</x:Double>
+            <x:Double x:Key="NextCardBtnFontSize">28</x:Double>
+
+            <!--Styles-->
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource CardTitleFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource CardTitleFontSize}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="DescLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource CardDescFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource CardDescFontSize}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="SubDescLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource CardSubDescFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource CardSubDescFontSize}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            
+            <!--Next Card btn Style-->
+            <Style x:Key="NextCardBtn" TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource CardSubDescFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource CardSubDescFontSize}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#C11912" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="BorderRadius" Value="25" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
