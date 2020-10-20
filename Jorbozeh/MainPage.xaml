@@ -1,25 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:Jorbozeh"
              x:Class="Jorbozeh.MainPage">
 
     <StackLayout>
         <StackLayout Orientation="Vertical"
-                     VerticalOptions="Start">
-            <Frame BackgroundColor="#C11912"
-                   Padding="24"
-                   CornerRadius="0">
-                <Label Text="جُربزه"
-                       HorizontalTextAlignment="Center"
-                       TextColor="White"
-                       FontSize="96" />
-            </Frame>
+                     VerticalOptions="Start"
+                     BackgroundColor="White">
+            <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" WidthRequest="200"/>
         </StackLayout>
-
         <StackLayout Orientation="Vertical"
                      VerticalOptions="CenterAndExpand">
 
-            <Image Source="" />
 
             <Label x:Name="cardTitle"
                    Text="Card Title"
