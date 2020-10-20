@@ -10,11 +10,16 @@
 
         <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0"/>
 
-        <StackLayout Grid.Row="1">
-            <Label x:Name="cardTitle" Text="Card Title" Style="{StaticResource TitleLabel}" Padding="20,40,20,40" />
-            <Label x:Name="cardDesc" Text="Card Desc" Style="{StaticResource DescLabel}" Padding="20,0,20,25"/>
-            <Label x:Name="cardSubDesc" Text="SubDesc" Style="{StaticResource SubDescLabel}" Padding="20,0,20,25" HorizontalTextAlignment="Center" FontAttributes="Italic" />
-        </StackLayout>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="cardTitle" Text="Card Title" Style="{StaticResource TitleLabel}" Padding="20,0,20,0" />
+            <Label Grid.Row="1" x:Name="cardDesc" Text="Card Desc" Style="{StaticResource DescLabel}" Padding="20,0,20,0" />
+            <Label Grid.Row="2" x:Name="cardSubDesc" Text="SubDesc" Style="{StaticResource SubDescLabel}" Padding="20,0,20,0" HorizontalTextAlignment="Center" FontAttributes="Italic" />
+        </Grid>
         
         <Button Text="کارتِ بعدی" IsVisible="True" Grid.Row="2" Style="{StaticResource NextCardBtn}"  Clicked="NextCard_btn_Clicked" />
         
