@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jorbozeh.WelcomePage" xmlns:local="clr-namespace:Jorbozeh">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Jorbozeh.WelcomePage" 
+             xmlns:local="clr-namespace:Jorbozeh" 
+             BackgroundColor="{StaticResource BackgroundColor}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="200" />
@@ -10,7 +11,6 @@
         </Grid.RowDefinitions>
 
 
-        <BoxView Grid.Row="0" Color="Red" />
         <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
         
         <BoxView Grid.Row="1" Color="White" />
@@ -26,7 +26,7 @@
             </ListView.ItemsSource>
         </ListView>
 
-        <BoxView Grid.Row="2" Color="Blue" />
+
         <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
     </Grid>
 </ContentPage>
