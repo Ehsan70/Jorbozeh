@@ -11,8 +11,24 @@
 
 
         <BoxView Grid.Row="0" Color="Red" />
+        <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
+        
         <BoxView Grid.Row="1" Color="White" />
-        <BoxView Grid.Row="2" Color="Blue" />
+        <ListView Grid.Row="1" Margin="10">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+        </ListView>
 
+        <BoxView Grid.Row="2" Color="Blue" />
+        <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Button_Clicked" />
     </Grid>
 </ContentPage>
