@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jorbozeh.WelcomePage">
+             x:Class="Jorbozeh.WelcomePage" xmlns:local="clr-namespace:Jorbozeh">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="200" />
@@ -17,18 +17,16 @@
         <ListView Grid.Row="1" Margin="10">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Baboon</x:String>
-                    <x:String>Capuchin Monkey</x:String>
-                    <x:String>Blue Monkey</x:String>
-                    <x:String>Squirrel Monkey</x:String>
-                    <x:String>Golden Lion Tamarin</x:String>
-                    <x:String>Howler Monkey</x:String>
-                    <x:String>Japanese Macaque</x:String>
+                    <x:String>ساده</x:String>
+                    <x:String>مووستفا</x:String>
+                    <x:String>خوش و بش</x:String>
+                    <x:String>داغ</x:String>
+                    <x:String>خیلی‌ داغ</x:String>
                 </x:Array>
             </ListView.ItemsSource>
         </ListView>
 
         <BoxView Grid.Row="2" Color="Blue" />
-        <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Button_Clicked" />
+        <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
     </Grid>
 </ContentPage>
