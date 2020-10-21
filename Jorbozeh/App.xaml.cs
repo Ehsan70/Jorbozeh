@@ -10,7 +10,7 @@ namespace Jorbozeh
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new WelcomePage();
         }
 
         protected override void OnStart()
