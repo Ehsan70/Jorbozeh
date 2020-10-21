@@ -19,7 +19,7 @@ namespace Jorbozeh
 
         private void Start_Btn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new MainPage());
+            Navigation.PushModalAsync(new Game());
         }
 
     }

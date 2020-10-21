@@ -3,15 +3,16 @@ using Jorbozeh.Model;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Jorbozeh
 {
-    public partial class MainPage : ContentPage
+    public partial class Game : ContentPage
     {
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         List<Card> cards;
 
-        public MainPage()
+        public Game()
         {
             InitializeComponent();
             InitCards();
