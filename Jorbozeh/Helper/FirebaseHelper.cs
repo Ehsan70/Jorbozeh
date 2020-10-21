@@ -19,7 +19,7 @@ namespace Jorbozeh.Helper
 
             await firebase
               .Child("Cards")
-              .PostAsync(new Card(desc, desc, desc, desc));
+              .PostAsync(new Card(desc, 1,desc, desc, desc, desc));
         }
 
         public async Task<Card> GetCard(string cardId)
@@ -50,7 +50,7 @@ namespace Jorbozeh.Helper
             var lst = new List<Card>();
             foreach (FirebaseObject<Card> c in cc)
             {
-                var card = new Card(c.Object.CardTitle, c.Object.CardDesc, c.Object.CardSubDesc, c.Object.CardImage);
+                var card = new Card(c.Object.CardTitle, 1, c.Object.CardTitle, c.Object.CardDesc, c.Object.CardSubDesc, c.Object.CardImage);
                 lst.Add(card);
             }
             return lst;

@@ -20,8 +20,8 @@
             <Label Grid.Row="1" x:Name="cardDesc" Text="Card Desc" Style="{StaticResource DescLabel}" Padding="20,0,20,0" />
             <Label Grid.Row="2" x:Name="cardSubDesc" Text="SubDesc" Style="{StaticResource SubDescLabel}" Padding="20,0,20,0" HorizontalTextAlignment="Center" FontAttributes="Italic" />
         </Grid>
-        
-        <Button Text="کارتِ بعدی" IsVisible="True" Grid.Row="2" Style="{StaticResource NextCardBtn}"  Clicked="NextCard_btn_Clicked" />
+
+        <Button Text="کارتِ بعدی" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}"  Clicked="NextCard_btn_Clicked" />
         
     </Grid>
 
