@@ -47,7 +47,7 @@
             </Style>
             
             <!--Next Card btn Style-->
-            <Style x:Key="NextCardBtn" TargetType="Button">
+            <Style x:Key="Btn" TargetType="Button">
                 <Setter Property="FontFamily" Value="{StaticResource CardSubDescFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource CardSubDescFontSize}" />
                 <Setter Property="TextColor" Value="White" />
@@ -55,6 +55,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="BorderRadius" Value="25" />
+                <Setter Property="WidthRequest" Value="150" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
