@@ -7,20 +7,20 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="200" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="150" />
         </Grid.RowDefinitions>
 
 
         <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
         
         <BoxView Grid.Row="1" Color="White" />
-        <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="Center" Margin="10">
+        <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" >
             <ListView.ItemTemplate>
-                <DataTemplate >
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding PersianName}"></Label>
-                            <Label Text="{Binding Detail}"></Label>
+                <DataTemplate>
+                    <ViewCell >
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label Text="{Binding PersianName}" FontSize="32" FontAttributes="Bold"></Label>
+                            <Label Text="{Binding Detail}" FontSize="22" FontAttributes="Italic"></Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

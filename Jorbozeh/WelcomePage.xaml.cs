@@ -17,19 +17,20 @@ namespace Jorbozeh
         public WelcomePage()
         {
             InitializeComponent();
+            decks.HasUnevenRows = true;
             decks.ItemsSource = new List<CardDeck>() {
                 new CardDeck()
                 {
-                    Name = "Simple", PersianName="ساده", Availibility="Public", Detail="ساده"
+                    Name = "Simple", PersianName="ساده", Availibility="Public", Detail="کارای ساده و معمولی‌"
                 },
                 new CardDeck(){
-                    Name = "Moostafa", PersianName="مووستفا", Availibility="Public", Detail="مووستفا1"
+                    Name = "Moostafa", PersianName="مووستفا", Availibility="Public", Detail="مووستفا هم بازی"
                 },
                 new CardDeck(){
-                    Name = "Hot", PersianName="داغ", Availibility="Public", Detail="داغ2"
+                    Name = "Hot", PersianName="داغ", Availibility="Public", Detail="یه خورده صمیمی‌ تر بشیم"
                 },
                 new CardDeck(){
-                    Name = "DoubleHot", PersianName="خیلی‌ داغ", Availibility="Public", Detail="داغ3"
+                    Name = "DoubleHot", PersianName="خیلی‌ داغ", Availibility="Public", Detail="خیلی‌ خیلی‌ صمیمی‌ بشیم"
                 }
             };
             decks.ItemTapped += Decks_ItemTapped;
@@ -41,17 +42,14 @@ namespace Jorbozeh
             CardDeck d = (CardDeck)e.Item;
             if (SelectedCardDecks.Contains(d))
             {
+                DisplayAlert("Confirm", $"Remove {string.Join("\n", d.Name)}", "ok");
                 SelectedCardDecks.Remove(d);
-                lv.BackgroundColor = Color.Red;
             }
             else
             {
+                DisplayAlert("Confirm", $"Add {string.Join("\n", d.Name)}", "ok");
                 SelectedCardDecks.Add(d);
-                lv.BackgroundColor = Color.Blue;
-
             }
-
-            DisplayAlert("Confirm", $"Add {string.Join("\n", SelectedCardDecks)}", "ok");
         }
 
         private void Start_Btn_Clicked(object sender, EventArgs e)
