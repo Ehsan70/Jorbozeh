@@ -4,6 +4,7 @@
         <ResourceDictionary>
             <!--Colors-->
             <Color x:Key="BackgroundColor">White</Color>
+            <Color x:Key="RedColor">#C11912</Color>
             
             
             <!--Font Families-->
@@ -51,7 +52,7 @@
                 <Setter Property="FontFamily" Value="{StaticResource CardSubDescFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource CardSubDescFontSize}" />
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="BackgroundColor" Value="#C11912" />
+                <Setter Property="BackgroundColor" Value="{StaticResource RedColor}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="BorderRadius" Value="25" />
