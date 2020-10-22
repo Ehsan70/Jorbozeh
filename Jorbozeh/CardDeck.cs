@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Jorbozeh
 {
-    class CardDeck
+    public class CardDeck
     {
         public string PersianName { get; set; }
         public string Name { get; set; }

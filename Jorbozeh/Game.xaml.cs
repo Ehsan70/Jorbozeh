@@ -2,6 +2,7 @@
 using Jorbozeh.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Jorbozeh
@@ -9,26 +10,40 @@ namespace Jorbozeh
     public partial class Game : ContentPage
     {
         FirebaseHelper firebaseHelper = new FirebaseHelper();
-        List<Card> cards;
+        public List<Card> allCards;
 
-        public Game()
+        public Game(List<CardDeck> cardDecks)
         {
             InitializeComponent();
-            InitCards();
+            InitCards(cardDecks);
         }
 
-        async void InitCards()
+        async void InitCards(List<CardDeck> cardDecks)
         {
-            cards = await firebaseHelper.GetAllCards();
+            foreach(CardDeck cd in cardDecks)
+            {
+                var cards = await firebaseHelper.GetCardsByDeck(cd.Name);
+                if (allCards == null)
+                {
+                    Console.WriteLine($"Initialized allCards with {cd.Name} ");
+                    allCards = new List<Card>(cards);
+                }
+                else
+                {
+                    Console.WriteLine($"Add {cd.Name} to allCards");
+                    allCards.AddRange(cards);
+                }
+            }
+            Console.WriteLine($"There are {allCards.Count} in the game!");
         }
 
         void NextCard_btn_Clicked(object sender, EventArgs e)
         {
             Random random = new Random();
-            var currectCard = random.Next(0, cards.Count);
-            cardDesc.Text = cards[currectCard].CardDesc;
-            cardSubDesc.Text = cards[currectCard].CardSubDesc;
-            cardTitle.Text = cards[currectCard].CardTitle;
+            var currectCard = random.Next(0, allCards.Count);
+            cardDesc.Text = allCards[currectCard].CardDesc;
+            cardSubDesc.Text = allCards[currectCard].CardSubDesc;
+            cardTitle.Text = allCards[currectCard].CardTitle;
         }
     }
 }

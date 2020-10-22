@@ -17,7 +17,12 @@
         <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="Center" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate >
-                    <TextCell Text="{Binding PersianName}" Detail="{Binding Detail}"></TextCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding PersianName}"></Label>
+                            <Label Text="{Binding Detail}"></Label>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

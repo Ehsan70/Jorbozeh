@@ -44,9 +44,11 @@ namespace Jorbozeh.Helper
 
         }
 
-        public async Task<List<Card>> GetAllCards()
+        public async Task<List<Card>> GetCardsByDeck(string cardDeckKey)
         {
-            IReadOnlyCollection<FirebaseObject<Card>> cc = await firebase.Child("Simple").OnceAsync<Card>();
+            // Example of cardDeckKey is Simple, Hot, DoubleHot, etc
+            // cardDeckKey is how the cards are found in firebase
+            IReadOnlyCollection<FirebaseObject<Card>> cc = await firebase.Child(cardDeckKey).OnceAsync<Card>();
             var lst = new List<Card>();
             foreach (FirebaseObject<Card> c in cc)
             {

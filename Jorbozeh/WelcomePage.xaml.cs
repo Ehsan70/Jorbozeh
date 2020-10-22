@@ -13,7 +13,7 @@ namespace Jorbozeh
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WelcomePage : ContentPage
     {
-        List<CardDeck> SelectedCardDecks = new List<CardDeck>();
+        public List<CardDeck> SelectedCardDecks = new List<CardDeck>();
         public WelcomePage()
         {
             InitializeComponent();
@@ -23,10 +23,13 @@ namespace Jorbozeh
                     Name = "Simple", PersianName="ساده", Availibility="Public", Detail="ساده"
                 },
                 new CardDeck(){
-                    Name = "Simple", PersianName="1ساده", Availibility="Public", Detail="ساده1"
+                    Name = "Moostafa", PersianName="مووستفا", Availibility="Public", Detail="مووستفا1"
                 },
                 new CardDeck(){
-                    Name = "Simple", PersianName="ساده2", Availibility="Public", Detail="ساده2"
+                    Name = "Hot", PersianName="داغ", Availibility="Public", Detail="داغ2"
+                },
+                new CardDeck(){
+                    Name = "DoubleHot", PersianName="خیلی‌ داغ", Availibility="Public", Detail="داغ3"
                 }
             };
             decks.ItemTapped += Decks_ItemTapped;
@@ -34,26 +37,26 @@ namespace Jorbozeh
 
         private void Decks_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            ListView l = (ListView)sender;
+            ListView lv = (ListView)sender;
             CardDeck d = (CardDeck)e.Item;
             if (SelectedCardDecks.Contains(d))
             {
                 SelectedCardDecks.Remove(d);
-                l.BackgroundColor = Color.Red;
+                lv.BackgroundColor = Color.Red;
             }
             else
             {
                 SelectedCardDecks.Add(d);
-                l.BackgroundColor = Color.Blue;
+                lv.BackgroundColor = Color.Blue;
 
             }
 
-            DisplayAlert("SelectedCardDecks", $"{l.SelectedItem} + {string.Join("\n", SelectedCardDecks)}", "ok");
+            DisplayAlert("Confirm", $"Add {string.Join("\n", SelectedCardDecks)}", "ok");
         }
 
         private void Start_Btn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Game());
+            Navigation.PushModalAsync(new Game(SelectedCardDecks));
         }
 
     }
