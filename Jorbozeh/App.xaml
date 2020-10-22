@@ -46,7 +46,7 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
             
-            <!--Next Card btn Style-->
+            <!-- btn Style-->
             <Style x:Key="Btn" TargetType="Button">
                 <Setter Property="FontFamily" Value="{StaticResource CardSubDescFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource CardSubDescFontSize}" />
