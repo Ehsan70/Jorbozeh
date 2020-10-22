@@ -14,18 +14,13 @@
         <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
         
         <BoxView Grid.Row="1" Color="White" />
-        <ListView Grid.Row="1" Margin="10">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>ساده</x:String>
-                    <x:String>مووستفا</x:String>
-                    <x:String>خوش و بش</x:String>
-                    <x:String>داغ</x:String>
-                    <x:String>خیلی‌ داغ</x:String>
-                </x:Array>
-            </ListView.ItemsSource>
+        <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="Center" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <TextCell Text="{Binding PersianName}" Detail="{Binding Detail}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-
 
         <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
     </Grid>
