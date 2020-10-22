@@ -7,18 +7,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="200" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
 
-        <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Grid.ColumnSpan="2" Aspect="AspectFill" Margin="0,20,0,0" />
+
+        <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
         
         <BoxView Grid.Row="1" Color="White" />
-        <ListView x:Name="decks" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" >
+        <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >
@@ -32,8 +29,11 @@
         </ListView>
 
 
-        <Button Text="شروع" IsVisible="True" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
-        <CheckBox Grid.Column="0" Grid.Row="3" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Start"></CheckBox>
-        <Label Grid.Column="1" Grid.Row="3" Padding="-60,0,0,0" WidthRequest="200" HorizontalOptions="Start" VerticalOptions="Start">I agree to terms and conditions!</Label>
+        <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
+        <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start">
+            <CheckBox Scale="1.5" Color="{StaticResource RedColor}"></CheckBox>
+            <Label FontAttributes="Italic" FontSize="18">I agree to terms and conditions!</Label>
+
+        </StackLayout>
     </Grid>
 </ContentPage>
