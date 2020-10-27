@@ -1,4 +1,4 @@
-using Firebase.Database;
+﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Jorbozeh.Model;
 using System;
@@ -14,13 +14,6 @@ namespace Jorbozeh.Helper
         //Source: https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase
         FirebaseClient firebase = new FirebaseClient("https://jorbozeh-6ae59.firebaseio.com/");
 
-        public async Task AddCard(int cardId, string desc)
-        {
-
-            await firebase
-              .Child("Cards")
-              .PostAsync(new Card(desc, 1,desc, desc, desc, desc));
-        }
 
         public async Task<Card> GetCard(string cardId)
         {
