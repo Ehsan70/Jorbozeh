@@ -1,4 +1,4 @@
-﻿using Firebase.Database;
+using Firebase.Database;
 using Firebase.Database.Query;
 using Jorbozeh.Model;
 using System;
@@ -52,7 +52,7 @@ namespace Jorbozeh.Helper
             var lst = new List<Card>();
             foreach (FirebaseObject<Card> c in cc)
             {
-                var card = new Card(c.Object.CardTitle, 1, c.Object.CardTitle, c.Object.CardDesc, c.Object.CardSubDesc, c.Object.CardImage);
+                var card = new Card(c.Object.CardTitle, c.Object.CardBatch, c.Object.CardTitle, c.Object.CardDesc, c.Object.CardSubDesc, c.Object.CardImage);
                 lst.Add(card);
             }
             return lst;
