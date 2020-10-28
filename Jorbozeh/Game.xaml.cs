@@ -91,11 +91,13 @@ namespace Jorbozeh
             int currectCardNum = random.Next(allBatchedCards[currentBatch].Count);
             while (drawnCards[currentBatch].Contains(currectCardNum) && drawnCards[currentBatch].Count != allBatchedCards[currentBatch].Count)
             {
+                Console.WriteLine($"card number {currectCardNum} already drawn");
                 currectCardNum = random.Next(drawnCards[currentBatch].Count);
+                Console.WriteLine($"Updated card number is {currectCardNum} ");
             }
             drawnCards[currentBatch].Add(currectCardNum);
 
-            Console.WriteLine($"currentBatch: {currentBatch} \t currectCard:{currectCardNum} \t card: {allBatchedCards[currentBatch][currectCardNum]}");
+            Console.WriteLine($"currentBatch: {currentBatch} \t allBatchedCards[currentBatch].Count:{allBatchedCards[currentBatch].Count} \t drawnCards[currentBatch].Count:{drawnCards[currentBatch].Count} \t currectCardNUm:{currectCardNum}  \n card: {allBatchedCards[currentBatch][currectCardNum]}");
             cardDesc.Text = allBatchedCards[currentBatch][currectCardNum].CardDesc;
             cardSubDesc.Text = allBatchedCards[currentBatch][currectCardNum].CardSubDesc;
             cardTitle.Text = allBatchedCards[currentBatch][currectCardNum].CardTitle;
