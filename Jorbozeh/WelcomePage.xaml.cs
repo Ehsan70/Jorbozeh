@@ -54,6 +54,7 @@ namespace Jorbozeh
 
         private void Start_Btn_Clicked(object sender, EventArgs e)
         {
+            // TODO: make sure user select a card deck
             Navigation.PushModalAsync(new Game(SelectedCardDecks));
         }
 

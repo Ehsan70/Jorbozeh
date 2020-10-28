@@ -1,4 +1,4 @@
-using Jorbozeh.Helper;
+﻿using Jorbozeh.Helper;
 using Jorbozeh.Model;
 using System;
 using System.Collections.Generic;
@@ -94,27 +94,49 @@ namespace Jorbozeh
 
                 }
             }
-
             Console.WriteLine($"There are {allCards.Count} in the game!");
+
+            for (int i = 0; i < BATCH_COUNT; i++)
+            {
+                allBatchedCards[i] = Shuffle<Card>(allBatchedCards[i]);
+            }
+            Console.WriteLine($"Shuffled cards.");
+
         }
 
         void NextCard_btn_Clicked(object sender, EventArgs e)
         {
-            int currectCardNum = random.Next(allBatchedCards[currentBatch].Count);
-            while (drawnCards[currentBatch].Contains(currectCardNum) && drawnCards[currentBatch].Count != allBatchedCards[currentBatch].Count)
+            Console.WriteLine($"Drawing card currentBatchIndex is {currentBatchIndex } currentCardIndex is {currentCardIndex}");
+            while (allBatchedCards[currentBatchIndex].Count == 0)
             {
-                Console.WriteLine($"card number {currectCardNum} already drawn");
-                currectCardNum = random.Next(drawnCards[currentBatch].Count);
-                Console.WriteLine($"Updated card number is {currectCardNum} ");
-            }
-            drawnCards[currentBatch].Add(currectCardNum);
+                currentBatchIndex++;
+                if (currentBatchIndex > 9)
+                {
+                    Console.WriteLine($"Game finished: currentBatchIndex:{currentBatchIndex } currentCardIndex is {currentCardIndex}");
 
-            Console.WriteLine($"currentBatch: {currentBatch} \t allBatchedCards[currentBatch].Count:{allBatchedCards[currentBatch].Count} \t drawnCards[currentBatch].Count:{drawnCards[currentBatch].Count} \t currectCardNUm:{currectCardNum}  \n card: {allBatchedCards[currentBatch][currectCardNum]}");
-            cardDesc.Text = allBatchedCards[currentBatch][currectCardNum].CardDesc;
-            cardSubDesc.Text = allBatchedCards[currentBatch][currectCardNum].CardSubDesc;
-            cardTitle.Text = allBatchedCards[currentBatch][currectCardNum].CardTitle;
-            if (drawnCards[currentBatch].Count == allBatchedCards[currentBatch].Count)
-                currentBatch++;
+                    //TODO: game finished handle it
+                    //break;
+                    currentBatchIndex = 0;
+                    currentCardIndex = 0;
+                    return;
+                }
+            }
+            cardDesc.Text = allBatchedCards[currentBatchIndex][currentCardIndex].CardDesc;
+            cardSubDesc.Text = allBatchedCards[currentBatchIndex][currentCardIndex].CardSubDesc;
+            cardTitle.Text = allBatchedCards[currentBatchIndex][currentCardIndex].CardTitle;
+            if (allBatchedCards[currentBatchIndex].Count <= (currentCardIndex+1))
+            {
+                Console.WriteLine($"currentBatchIndex is {currentBatchIndex } currentCardIndex is {currentCardIndex}");
+                currentBatchIndex++;
+                currentCardIndex = 0;
+                Console.WriteLine($"Update: currentBatchIndex is {currentBatchIndex } currentCardIndex is {currentCardIndex}");
+
+            }
+            else
+            {
+                Console.WriteLine($"Increaseing card index : currentBatchIndex is {currentBatchIndex } currentCardIndex is {currentCardIndex}");
+                currentCardIndex++;
+            }
         }
     }
 }
