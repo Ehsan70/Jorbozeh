@@ -1,4 +1,4 @@
-﻿using Jorbozeh.Helper;
+using Jorbozeh.Helper;
 using Jorbozeh.Model;
 using System;
 using System.Collections.Generic;
@@ -14,18 +14,30 @@ namespace Jorbozeh
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         public List<Card> allCards;
         public List<Card>[] allBatchedCards = new List<Card>[BATCH_COUNT];
-        public List<int>[] drawnCards = new List<int>[BATCH_COUNT];
-        private int currentBatch = 0;
+        public int currentCardIndex = 0;
+        private int currentBatchIndex = 0;
 
         public Game(List<CardDeck> cardDecks)
         {
             InitializeComponent();
             for(int x = 0; x < BATCH_COUNT; x++)
             {
-                drawnCards[x] = new List<int>();
                 allBatchedCards[x] = new List<Card>();
             }
             InitCards(cardDecks);
+        }
+
+        public static List<T> Shuffle<T>(List<T> list)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < list.Count; i++)
+            {
+                int k = rnd.Next(0, i);
+                T value = list[k];
+                list[k] = list[i];
+                list[i] = value;
+            }
+            return list;
         }
 
         async void InitCards(List<CardDeck> cardDecks)
