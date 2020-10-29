@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Jorbozeh.WelcomePage" 
              xmlns:local="clr-namespace:Jorbozeh" 
@@ -9,6 +9,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="80" />
             <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
 
 
@@ -32,7 +33,7 @@
         <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
         <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start">
             <!-- Add https://www.termsfeed.com/live/eb8531a0-9edf-4b13-8500-058cc435e47c--> 
-            <CheckBox Scale="1.5" Color="{StaticResource RedColor}"></CheckBox>
+            <CheckBox x:Name="TermsCheckbox" Scale="1.5" Color="{StaticResource RedColor}"></CheckBox>
             <Label FontAttributes="Italic" FontSize="15">
                 <Label.FormattedText>
                     <FormattedString>

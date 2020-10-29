@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -62,8 +62,22 @@ namespace Jorbozeh
 
         private void Start_Btn_Clicked(object sender, EventArgs e)
         {
+
             // TODO: make sure user select a card deck
-            Navigation.PushModalAsync(new Game(SelectedCardDecks));
+            if(SelectedCardDecks.Count == 0)
+            {
+                DisplayAlert("لطفا حداقل یک دسته کارت انتخاب کنید", "روی دسته کارت کلیک کنید تا انتخاب شود", "چشم");
+                return;
+
+            }
+            if (TermsCheckbox.IsChecked)
+            {
+                Navigation.PushModalAsync(new Game(SelectedCardDecks));
+            }
+            else
+            {
+                DisplayAlert("لطفاً با شرایط و ضوابط موافقت کنید", "روی کادر شرایط و ضوابط کلیک کنید", "چشم");
+            }
         }
 
     }
