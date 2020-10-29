@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -41,6 +41,7 @@ namespace Jorbozeh
 
         public ICommand ClickCommand => new Command<string>((url) =>
         {
+            // TODO: make the link clickable
             Device.OpenUri(new System.Uri(url));
         });
 
@@ -50,12 +51,12 @@ namespace Jorbozeh
             CardDeck d = (CardDeck)e.Item;
             if (SelectedCardDecks.Contains(d))
             {
-                DisplayAlert("Confirm", $"Remove {string.Join("\n", d.Name)}", "ok");
+                DisplayAlert("", $"دسته کارت حذف شد ({string.Join("\n", d.PersianName)})", "اِی وای");
                 SelectedCardDecks.Remove(d);
             }
             else
             {
-                DisplayAlert("Confirm", $"Add {string.Join("\n", d.Name)}", "ok");
+                DisplayAlert("", $"دسته کارت اضافه شد ({string.Join("\n", d.PersianName)})", "آخ جون");
                 SelectedCardDecks.Add(d);
             }
         }
