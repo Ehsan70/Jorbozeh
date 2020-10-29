@@ -13,7 +13,7 @@
 
 
         <Image Source="{local:ImageResourceExtention Jorbozeh.Images.JorbozehCards.jpg}" Grid.Row="0" Aspect="AspectFill" Margin="0,20,0,0" />
-        
+
         <BoxView Grid.Row="1" Color="White" />
         <ListView x:Name="decks" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" >
             <ListView.ItemTemplate>
@@ -31,8 +31,22 @@
 
         <Button Text="شروع" IsVisible="True" Grid.Row="2" Style="{StaticResource Btn}" Clicked="Start_Btn_Clicked" />
         <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start">
+            <!-- Add https://www.termsfeed.com/live/eb8531a0-9edf-4b13-8500-058cc435e47c--> 
             <CheckBox Scale="1.5" Color="{StaticResource RedColor}"></CheckBox>
-            <Label FontAttributes="Italic" FontSize="18">I agree to terms and conditions!</Label>
+            <Label FontAttributes="Italic" FontSize="15">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="من با " />
+                        <Span Text="شرایط و ضوابط استفاده" TextColor="Blue" TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.termsfeed.com/live/eb8531a0-9edf-4b13-8500-058cc435e47c" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text=" موافقم" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
         </StackLayout>
     </Grid>

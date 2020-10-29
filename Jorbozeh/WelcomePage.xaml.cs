@@ -4,7 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,6 +36,13 @@ namespace Jorbozeh
             };
             decks.ItemTapped += Decks_ItemTapped;
         }
+        public ICommand TapCommand => new Command<string>(async (url) => await Browser.OpenAsync(url, BrowserLaunchMode.SystemPreferred));
+
+
+        public ICommand ClickCommand => new Command<string>((url) =>
+        {
+            Device.OpenUri(new System.Uri(url));
+        });
 
         private void Decks_ItemTapped(object sender, ItemTappedEventArgs e)
         {
