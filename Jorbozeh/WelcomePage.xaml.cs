@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jorbozeh.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -15,16 +16,18 @@ namespace Jorbozeh
     public partial class WelcomePage : ContentPage
     {
         public List<CardDeck> SelectedCardDecks = new List<CardDeck>();
-        public WelcomePage()
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
+
+        public  WelcomePage()
         {
             InitializeComponent();
+            UpdateCards();
+        }
+
+        async void UpdateCards()
+        {
             decks.HasUnevenRows = true;
-            decks.ItemsSource = new List<CardDeck>() {
-                new CardDeck("Simple", "ساده", "Public", "کارای ساده و معمولی‌"),
-                new CardDeck("Moostafa", "مووستفا", "Public", "مووستفا هم بازی"),
-                new CardDeck("Hot", "داغ", "Public", "یه خورده صمیمی‌ تر بشیم"),
-                new CardDeck("DoubleHot", "خیلی‌ داغ", "Public", "خیلی‌ خیلی‌ صمیمی‌ بشیم")
-            };
+            decks.ItemsSource = await firebaseHelper.GetDeckInfo();
             decks.ItemTapped += Decks_ItemTapped;
         }
         public ICommand TapCommand => new Command<string>(async (url) => await Browser.OpenAsync(url, BrowserLaunchMode.SystemPreferred));
