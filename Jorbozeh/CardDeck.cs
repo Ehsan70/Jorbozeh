@@ -6,6 +6,13 @@ namespace Jorbozeh
 {
     public class CardDeck
     {
+        public CardDeck(string name, string persianName, string availibility, string detail)
+        {
+            PersianName = persianName;
+            Name = name;
+            Detail = detail;
+            Availibility= availibility;
+        }
         public string PersianName { get; set; }
         public string Name { get; set; }
         public string Detail { get; set; }
