@@ -13,7 +13,7 @@ namespace Jorbozeh.Helper
     {
         //Source: https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase
         FirebaseClient firebase = new FirebaseClient("https://jorbozeh-6ae59.firebaseio.com/");
-
+        const String FB_CARDS_KEY = "Cards";
 
         public async Task<Card> GetCard(string cardId)
         {
@@ -35,6 +35,19 @@ namespace Jorbozeh.Helper
                 return null;
             }
 
+        }
+
+        public async Task<List<CardDeck>> GetDeckInfo(string cardDeckKey)
+        {
+            // Gets list of all the cards in firebase
+            IReadOnlyCollection<FirebaseObject<CardDeck>> cds = await firebase.Child(FB_CARDS_KEY).OnceAsync<CardDeck>();
+            var lst = new List<CardDeck>();
+            foreach (FirebaseObject<CardDeck> cd in cds)
+            {
+                var cardDeck = new CardDeck(cd.Object.PersianName, cd.Object.Name, cd.Object.Detail, cd.Object.Availibility);
+                lst.Add(cardDeck);
+            }
+            return lst;
         }
 
         public async Task<List<Card>> GetCardsByDeck(string cardDeckKey)

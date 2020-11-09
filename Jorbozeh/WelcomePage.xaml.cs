@@ -20,19 +20,10 @@ namespace Jorbozeh
             InitializeComponent();
             decks.HasUnevenRows = true;
             decks.ItemsSource = new List<CardDeck>() {
-                new CardDeck()
-                {
-                    Name = "Simple", PersianName="ساده", Availibility="Public", Detail="کارای ساده و معمولی‌"
-                },
-                new CardDeck(){
-                    Name = "Moostafa", PersianName="مووستفا", Availibility="Public", Detail="مووستفا هم بازی"
-                },
-                new CardDeck(){
-                    Name = "Hot", PersianName="داغ", Availibility="Public", Detail="یه خورده صمیمی‌ تر بشیم"
-                },
-                new CardDeck(){
-                    Name = "DoubleHot", PersianName="خیلی‌ داغ", Availibility="Public", Detail="خیلی‌ خیلی‌ صمیمی‌ بشیم"
-                }
+                new CardDeck("Simple", "ساده", "Public", "کارای ساده و معمولی‌"),
+                new CardDeck("Moostafa", "مووستفا", "Public", "مووستفا هم بازی"),
+                new CardDeck("Hot", "داغ", "Public", "یه خورده صمیمی‌ تر بشیم"),
+                new CardDeck("DoubleHot", "خیلی‌ داغ", "Public", "خیلی‌ خیلی‌ صمیمی‌ بشیم")
             };
             decks.ItemTapped += Decks_ItemTapped;
         }
