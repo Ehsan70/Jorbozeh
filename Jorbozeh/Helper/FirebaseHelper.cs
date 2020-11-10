@@ -37,6 +37,22 @@ namespace Jorbozeh.Helper
 
         }
 
+        public async Task<List<CardDeck>> GetPublicDeckInfo()
+        {
+            // Gets list of public the decks in firebase
+            IReadOnlyCollection<FirebaseObject<CardDeck>> cds = await firebase.Child(FB_CARDS_KEY).OnceAsync<CardDeck>();
+            var lst = new List<CardDeck>();
+            foreach (FirebaseObject<CardDeck> cd in cds)
+            {
+                if(cd.Object.Availibility == "Private")
+                {
+                    var cardDeck = new CardDeck(cd.Object.Name, cd.Object.PersianName, cd.Object.Availibility, cd.Object.Detail);
+                    lst.Add(cardDeck);
+                }
+            }
+            return lst;
+        }
+
         public async Task<List<CardDeck>> GetDeckInfo()
         {
             // Gets list of all the cards in firebase
