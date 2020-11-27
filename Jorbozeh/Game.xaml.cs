@@ -102,22 +102,45 @@ namespace Jorbozeh
             }
             Console.WriteLine($"Shuffled cards.");
 
+
+        }
+
+        async System.Threading.Tasks.Task Handle_EndAsync()
+        {
+            string action = await DisplayActionSheet("کارت‌ها تموم شد. همشو بازی کردین!", null, null, "شروع از اول", "خروج", "Instagram");
+            if (action == "شروع از اول")
+            {
+                currentBatchIndex = 0;
+                currentCardIndex = 0;
+            }
+            else if (action == "خروج")
+            {
+                System.Environment.Exit(0);
+            }
+            // Reseting the indexes anyway in case they dont click on options on the alert
+            currentBatchIndex = 0;
+            currentCardIndex = 0;
         }
 
         void NextCard_btn_Clicked(object sender, EventArgs e)
         {
             Console.WriteLine($"Drawing card currentBatchIndex is {currentBatchIndex } currentCardIndex is {currentCardIndex}");
-            while (allBatchedCards[currentBatchIndex].Count == 0)
+            if(currentBatchIndex >= 10)
+            {
+                // Reseting the indexes in case they dont click on options on the alert
+                // if currentBatchIndex is 10 the application crashes
+                currentBatchIndex = 0;
+                currentCardIndex = 0;
+            }
+            while (allBatchedCards[currentBatchIndex].Count == 0 && currentBatchIndex < 10) // there is error here
             {
                 currentBatchIndex++;
                 if (currentBatchIndex > 9)
                 {
                     Console.WriteLine($"Game finished: currentBatchIndex:{currentBatchIndex } currentCardIndex is {currentCardIndex}");
 
-                    //TODO: game finished handle it
-                    //break;
-                    currentBatchIndex = 0;
-                    currentCardIndex = 0;
+                    _ = Handle_EndAsync();
+
                     return;
                 }
             }
