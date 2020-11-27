@@ -12,7 +12,6 @@ namespace Jorbozeh.Model
         public string CardDesc { get; set; }
         public string CardSubDesc { get; set; }
         public string CardImage { get; set; }
-        public int PlayedCount { get; set; }
 
 
         public Card(string cardDeck, int cardBatch, string cardTitle, string cardDesc, string cardSubDesc, string cardImage)
@@ -23,7 +22,6 @@ namespace Jorbozeh.Model
             CardDesc = cardDesc;
             CardSubDesc = cardSubDesc;
             CardImage = cardImage;
-            PlayedCount = 0;
         }
 
         public override string ToString()
